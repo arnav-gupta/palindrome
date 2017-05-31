@@ -1,0 +1,125 @@
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a routerLink="/home" routerLinkActive="active">Home</a>
+                </li>
+                <li>
+                    <a routerLink="/palindrome">Palindrome</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Page Header -->
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Palindrome Calculator</h1>
+                    <hr class="small">
+                    <span class="subheading">Palindrome calculator finds the largest palindrome between the range given by user. </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!--            <form #f="ngForm" (keydown.enter)="$event.preventDefault()" novalidate>
+                             we will place our fields here 
+                            <label>Enter first number : </label><input type="text" name="fnum" [(ngModel)]="fnum"><br/><br/>
+                            <label>Enter second number : </label><input type="text" name="snum" [(ngModel)]="snum"><br/><br/>
+                            <button type="button" (click)='palind(fnum, snum)'>Submit</button>
+                        </form>-->
+            <form class="form-inline" #f="ngForm" (keydown.enter)="$event.preventDefault()" novalidate>
+                <div class="form-group">
+                    <label>1st Number</label>
+                    <input type="text" class="form-control" id="email" placeholder="1st Number" name="fnum" [(ngModel)]="fnum">
+                </div>
+                <div class="form-group">
+                    <label>2nd Number</label>
+                    <input type="text" class="form-control" id="pwd" placeholder="2nd Number" name="snum" [(ngModel)]="snum">
+                </div>
+                <div class="checkbox">
+                    <button type="button" class="btn btn-default" (click)='palind(fnum, snum)'>Submit</button>
+                </div>
+            </form>
+            <div class="clear_both"></div>
+            <div class="resposnediv">
+                <div id="fountainG" *ngIf="showload">
+                    <div id="fountainG_1" class="fountainG"></div>
+                    <div id="fountainG_2" class="fountainG"></div>
+                    <div id="fountainG_3" class="fountainG"></div>
+                    <div id="fountainG_4" class="fountainG"></div>
+                    <div id="fountainG_5" class="fountainG"></div>
+                    <div id="fountainG_6" class="fountainG"></div>
+                    <div id="fountainG_7" class="fountainG"></div>
+                    <div id="fountainG_8" class="fountainG"></div>
+                </div>
+                <p *ngIf="showres">{{res}}</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="#">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+            </div>
+        </div>
+    </div>
+</footer>
