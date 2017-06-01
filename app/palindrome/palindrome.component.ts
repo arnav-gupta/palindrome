@@ -34,6 +34,9 @@ export class PalindromeComponent {
         console.log(this.pal);
        console.log('Largest   '+Math.max.apply(Math, this.pal));*/
     }
+    isPalindrome(s,i) {
+       return (i=i||0)<0||i>=s.length>>1||s[i]==s[s.length-1-i] && this.isPalindrome(s,++i);
+    }
     palind(x,y){
             x=parseInt(x);
             y=parseInt(y);
@@ -46,23 +49,21 @@ export class PalindromeComponent {
             }else{
             this.showload=true;
                     for (let num = y; num >= x; num--) {
-                      var a=num.toString().split('').reverse().join('');
-                      if(num==a){
-                         // this.pal.push(x);
-                         this.res='Largest Palindrome between '+this.fnum+' and '+this.snum+' is '+a;
-                            this.showload=false;
-                            this.showres=true;
-                         return;
-                      }
+                    if(this.isPalindrome(num.toString().split(''),0)){
+                          this.res = 'Largest Palindrome between ' + this.fnum + ' and ' + this.snum + ' is ' + num;
+                          this.showload = false;
+                          this.showres = true;
+                          return;
+                        }
 
                   }
                   this.res='No palindromic number found!';
                   this.showload=false;
                   this.showres=true;
-                  
+
                 // this.res=Math.max.apply(Math, this.pal);
                    //   console.log(this.res);
-                 
+
             }
     }
 }
